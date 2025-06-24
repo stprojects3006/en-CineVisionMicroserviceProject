@@ -1,5 +1,5 @@
 const dateConvert = (date) => {
-    return new Date(date).toLocaleDateString("tr", {
+    return new Date(date).toLocaleDateString("en", {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
