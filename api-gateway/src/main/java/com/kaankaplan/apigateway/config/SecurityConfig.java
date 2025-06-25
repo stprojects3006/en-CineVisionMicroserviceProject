@@ -11,10 +11,11 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity){
-
+    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
+        // Configure CORS and disable CSRF protection
         serverHttpSecurity.cors().and().csrf().disable()
                 .authorizeExchange(exchange -> exchange
+                        // Allow all exchanges (requests) without authentication
                         .anyExchange()
                         .permitAll());
         return serverHttpSecurity.build();
