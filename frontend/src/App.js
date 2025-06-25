@@ -14,5 +14,5 @@ function App() {
     </div>
   );
 }
-
+export const API_BASE_URL="http://18.118.194.157/:8080";
 export default App;
