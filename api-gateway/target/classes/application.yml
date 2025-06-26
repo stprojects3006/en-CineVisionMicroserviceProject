@@ -6,28 +6,28 @@ spring:
     gateway:
       routes:
         - id: movieService
-          uri: lb://movieService
+          uri: lb://MOVIESERVICE
           predicates:
             - Path=/api/movie/**
         - id: userService
-          uri: lb://userService
+          uri: lb://USERSERVICE
           predicates:
             - Path=/api/user/**
         - id: eureka-server
-          uri: http://localhost:8761
+          uri: http://18.217.148.69:8761
           predicates:
             - Path=/eureka/web
           filters:
             - SetPath=/
         - id: eureka-server-static
-          uri: http://localhost:8761
+          uri: http://18.217.148.69:8761
           predicates:
             - Path=/eureka/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
 
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://18.217.148.69:9411
 
   sleuth:
     sampler:
@@ -36,7 +36,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka:password@localhost:8761/eureka
+      defaultZone: http://eureka:password@18.217.148.69:8761/eureka
 
 management:
   endpoints:

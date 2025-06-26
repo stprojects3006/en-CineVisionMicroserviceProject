@@ -1,9 +1,9 @@
 import axios from "axios";
-//import { API_BASE_URL } from "../App";
+import { API_BASE_URL } from "../App";
 
 export class CommentService {
 
-    apiUrl = App.API_BASE_URL + "/api/movie/comments/"
+    apiUrl = API_BASE_URL + "/api/movie/comments/"
 
     getCommentsByMovieId(movieId, pageNo, pageSize=5) {
         return axios.get(this.apiUrl + "getCommentsByMovieId/" + movieId + "/" + pageNo + "/" + pageSize);

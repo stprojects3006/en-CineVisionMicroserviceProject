@@ -5,7 +5,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka:password@localhost:8761/eureka
+      defaultZone: http://eureka:password@18.217.148.69:8761/eureka
     fetch-registry: true
     register-with-eureka: true
 
@@ -29,7 +29,7 @@ spring:
       name: email_topics
   # Zipkin Properties
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://18.217.148.69:9411
   # Sleuth Properties
   sleuth:
     sampler:

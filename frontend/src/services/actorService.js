@@ -1,10 +1,10 @@
 import axios from "axios";
-//import { API_BASE_URL } from "../App";
+import { API_BASE_URL } from "../App";
+//import { applyMiddleware } from "redux";
 
 export class ActorService {
-
-    apiUrl = App.API_BASE_URL + "/api/movie/actors/"
-    //apiUrl = API_BASE_URL + "/api/movie/actors/"
+  
+    apiUrl = API_BASE_URL + "/api/movie/actors/"
     
     getActorsByMovieId(movieId) {
         return axios.get(this.apiUrl + "getActorsByMovieId/" + movieId);

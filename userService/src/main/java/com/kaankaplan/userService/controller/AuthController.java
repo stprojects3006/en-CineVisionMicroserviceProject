@@ -18,6 +18,13 @@ public class AuthController {
 
     @PostMapping("/login")
     public UserAuthenticationResponseDto login(@RequestBody UserLoginRequestDto userLoginRequestDto) {
-        return authService.login(userLoginRequestDto);
+        
+        UserAuthenticationResponseDto userLoginDto = new UserAuthenticationResponseDto();
+        userLoginDto.setEmail(userLoginRequestDto.getEmail());
+        userLoginDto.setFullName("Sanjeev T");
+
+        return userLoginDto;
+        
+        //return authService.login(userLoginRequestDto);
     }
 }

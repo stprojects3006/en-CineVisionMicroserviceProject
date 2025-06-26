@@ -11,11 +11,11 @@ spring:
       password: rootpass
       database: user
       port: 27017
-      host: localhost
+      host: 18.217.148.69
       auto-index-creation: true
   ## Zipkin and Sleuth Properties
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://18.217.148.69:9411
   sleuth:
     sampler:
       probability: 1.0
@@ -24,7 +24,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka:password@localhost:8761/eureka
+      defaultZone: http://eureka:password@18.217.148.69:8761/eureka
     fetch-registry: true
     register-with-eureka: true
 

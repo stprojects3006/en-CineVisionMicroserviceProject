@@ -7,6 +7,8 @@ import com.kaankaplan.userService.entity.User;
 import com.kaankaplan.userService.entity.dto.UserAuthenticationResponseDto;
 import com.kaankaplan.userService.entity.dto.UserLoginRequestDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthServiceImpl implements AuthService {
 
     private final AuthenticationManager authenticationManager;
@@ -27,12 +30,24 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public UserAuthenticationResponseDto login(UserLoginRequestDto userLoginRequestDto) {
+    
+    Authentication authenticate =null;
+    try{
 
-        Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+        log.info("----- @@@@@@@@ loading the user - authentication manager-----@@@@@");
+        authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 userLoginRequestDto.getEmail(),
                 userLoginRequestDto.getPassword()
         ));
+        log.info("-----@@@@@ loaded the user - authentication manager" + authenticate.getName() + "-----@@@@@");
+    }
+    catch(Exception e) {
+        log.info(e.getMessage());
+        log.info("error message ends");
+        e.getStackTrace();
+    }
 
+    
         SecurityContextHolder.getContext().setAuthentication(authenticate);
         String token = jwtProvider.generateToken(authenticate);
 
