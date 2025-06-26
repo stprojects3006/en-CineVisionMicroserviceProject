@@ -27,13 +27,12 @@ public class SecurityConfig {
                         .permitAll());
         return serverHttpSecurity.build();
     }
-/* 
+ 
     @Bean
     public WebFilter corsFilter() {
         return (ServerWebExchange exchange, WebFilterChain chain) -> {
             if (CorsUtils.isCorsRequest(exchange.getRequest())) {
-                exchange.getResponse().getHeaders().add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://18.118.194.157:3000");
-                exchange.getResponse().getHeaders().add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+                exchange.getResponse().getHeaders().add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://18.118.194.157:3000, http://localhost:3000, *");
                 exchange.getResponse().getHeaders().add(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "GET, POST, PUT, DELETE, OPTIONS");
                 exchange.getResponse().getHeaders().add(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "Origin, Content-Type, Accept, Authorization");
                 exchange.getResponse().getHeaders().add(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
@@ -46,5 +45,5 @@ public class SecurityConfig {
             return chain.filter(exchange);
         };
     }
-*/
+
 }
