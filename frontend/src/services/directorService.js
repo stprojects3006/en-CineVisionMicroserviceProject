@@ -1,8 +1,9 @@
 import axios from "axios"
-import { API_BASE_URL } from "../App";
+//import { API_BASE_URL } from "../App";
 
 export class DirectorService{
-    apiUrl = API_BASE_URL + "/api/movie/directors/"
+  
+    apiUrl = App.API_BASE_URL + "/api/movie/directors/"
 
     getall() {
         return axios.get(this.apiUrl + "getall")

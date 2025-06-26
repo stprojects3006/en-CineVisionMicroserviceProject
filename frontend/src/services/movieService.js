@@ -1,9 +1,9 @@
 import axios from "axios";
-    import { API_BASE_URL } from "../App"; 
+//import { API_BASE_URL } from "../App"; 
 
 export class MovieService {
-    
-    apiUrl = API_BASE_URL + "/api/movie/movies/"
+  
+    apiUrl = App.API_BASE_URL + "/api/movie/movies/"
 
     getAllDisplayingMovies() {
         return axios.get(this.apiUrl + "displayingMovies");

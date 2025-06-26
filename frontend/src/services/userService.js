@@ -1,9 +1,9 @@
 import axios from "axios";
-import { API_BASE_URL } from "../App"; 
-
+//import { API_BASE_URL } from "../App"; 
 
 export class UserService {
-    apiUrl = API_BASE_URL + "/api/user/users/";
+
+    apiUrl = App.API_BASE_URL + "/api/user/users/";
 
     addCustomer(customer) {
         return axios.post(this.apiUrl + "add", customer);

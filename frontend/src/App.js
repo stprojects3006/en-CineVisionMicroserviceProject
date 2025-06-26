@@ -3,6 +3,8 @@ import Dashboard from './layout/Dashboard';
 import Footer from './layout/Footer';
 import Navbar from './layout/Navbar';
 
+const API_BASE_URL="http://18.217.148.69/:8080";
+
 function App() {
   return (
     <div className="App">
@@ -14,5 +16,5 @@ function App() {
     </div>
   );
 }
-export const API_BASE_URL="http://18.118.194.157/:8080";
+//export const API_BASE_URL="http://18.118.194.157/:8080";
 export default App;
